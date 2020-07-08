@@ -21,13 +21,13 @@ Submissions:
 
 
 2. "5 features" [Log loss calculated by Kaggle -> 0.13153 (115th place on Public Leaderboard/ 576)] 
-  !! in best 20% !!
+  <br>!! in best 20% !!
   - same as previously but 2 additional features added:
 	* last_is_auto_renew = If last subscription is renewed automatically
 	* subscription_len = Length of last subscription
 	
 3. "with some logs features" [Log loss calculated by Kaggle -> 0.13066 (113th place on Public Leaderboard/ 576)] 
-  !! in best 20% !!
+  <br>!! in best 20% !!
   - same as previously but 2 additional features added:
 	* num_100_sum = Number of songs listened till the end during last month
 	* days_from_last_log = Number of days from the last log
