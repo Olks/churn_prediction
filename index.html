@@ -17004,7 +17004,7 @@ xgb                                   module       &lt;module &#39;xgboost&#39; 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Basic-Trasactional-Features">Basic Trasactional Features<a class="anchor-link" href="#Basic-Trasactional-Features">&#182;</a></h3>
+<h3 id="Trasactional-Features">Trasactional Features<a class="anchor-link" href="#Trasactional-Features">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -17114,19 +17114,19 @@ Let's use pyspark to filter out monthly logs!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code></p>
-<h1 id="Import-pyspark-modules-and-create-spark-context-and-session">Import pyspark modules and create spark context and session<a class="anchor-link" href="#Import-pyspark-modules-and-create-spark-context-and-session">&#182;</a></h1><p>from pyspark import SparkContext
+<p><code>
+from pyspark import SparkContext
 from pyspark.sql import SparkSession
 sc = SparkContext("local", "First App")
 my_spark = SparkSession.builder.getOrCreate()
-&lt;/code&gt;<code></p>
-<h1 id="Read-the-file-and-add-to-catalog">Read the file and add to catalog<a class="anchor-link" href="#Read-the-file-and-add-to-catalog">&#182;</a></h1><p>file_path = user_logs_path
+</code><code>
+file_path = user_logs_path
 user_logs = my_spark.read.csv(file_path, header=True)
 user_logs.show()
 user_logs.createOrReplaceTempView("user_logs")
 print(my_spark.catalog.listTables())
-&lt;/code&gt;<code></p>
-<h1 id="Filter-only-logs-from-january-and-february-and-save-them-to-csv">Filter only logs from january and february and save them to csv<a class="anchor-link" href="#Filter-only-logs-from-january-and-february-and-save-them-to-csv">&#182;</a></h1><p>query_january = "SELECT* FROM user_logs WHERE date &gt;= 20170101 AND date &lt;= 20170131"
+</code><code>
+query_january = "SELECT* FROM user_logs WHERE date &gt;= 20170101 AND date &lt;= 20170131"
 january_logs = my_spark.sql(query_january)
 january_logs.coalesce(1).write.format('csv').save("january_logs", header='true')</p>
 <p>query_february = "SELECT* FROM user_logs WHERE date &gt;= 20170201 AND date &lt;= 20170228"
