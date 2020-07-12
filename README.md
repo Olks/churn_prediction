@@ -53,3 +53,14 @@ Submissions:
 	* last_month_logs_num,
 	* num_100_sum,
 	* num_25_sum
+
+5. "careful features selection"  
+<br> [Log loss calculated by Kaggle -> 0.11637 (41th place on Public Leaderboard/ 576)] 
+<br> !! best 8% !!
+	* days_from_start, 
+	* cancel_sum_4weeks,
+    * last_is_auto_renew,
+	* last_payment_plan_days,
+	* last_month_logs_num,
+	* num_100_sum.
+	
